@@ -1,0 +1,21 @@
+
+%h1 アルバム一覧
+
+%table
+  %tr
+    %th.list_menu タイトル
+    %th.list_menu 作成者
+    %th
+    %th
+    %th
+
+  - @albums.each do |album|
+    %tr
+      %td= album.title
+      %td= album.user_id
+      %td= link_to '詳細へ', album
+      %td= link_to '編集する', edit_album_path(album)
+      %td= link_to '削除する', album, :confirm => '削除してもいい?', :method => :delete
+
+%br
+

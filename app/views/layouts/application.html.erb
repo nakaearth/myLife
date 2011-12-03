@@ -7,8 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<section>
+<div id="user_nav">
+<% if current_user==nil %>
+  <div class="login_btn">
+<%= link_to "Twitterでログイン", "/auth/twitter" %>&nbsp;&nbsp;
+</div>
+<% else %>
+<div class="login_user_info">
+&nbsp;&nbsp;<img src="<%=current_user.profile_path %>"><a href="/users/<%=current_user.id %>/edit"><%=current_user.name %>さん</a>、こんばんは！&nbsp;&nbsp;&nbsp;&nbsp;|<a href="/logout">ログアウト</a>
+</div>
+<%= render 'common/menu' %>
 
 <%= yield %>
-
+<% end %>
+<br>
+</section>
 </body>
 </html>

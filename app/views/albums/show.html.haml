@@ -1,0 +1,13 @@
+%p#notice= notice
+%div.album_form
+  %p
+    %b タイトル:
+    = @album.title
+  %p
+    %b Public flag:
+    = @album.public_flag
+  %p
+    %b 説明:
+    = @album.description
+
+  = link_to '編集', edit_album_path(@album)

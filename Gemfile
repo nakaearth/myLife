@@ -46,3 +46,4 @@ gem "whenever"
 gem "carrierwave"
 gem "rspec"
 gem "rspec-rails", :group => :development
+gem "paperclip", "~> 2.4"

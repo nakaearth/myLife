@@ -1,0 +1,42 @@
+.title {
+	font-weight: bold;
+	font-size: 15pt;
+}
+
+.label {
+	font-size: 10pt;
+	font-weight: bold;
+    background-color: #FFFFDB;
+}
+
+
+header{
+    width: 1000px;
+    height: 50px;
+}
+section {
+    width: 1000px;
+	/*background-color: #61D060;*/
+	visibility: visible;
+	z-index: 0;
+    float: right;
+    margin: 3px;
+}
+root { 
+    display: block;
+}
+.album_form {
+    font-weight: bold;
+    font-size: 12pt;
+    background-color: #FFFFDB;
+    border: 1px solid #333333;
+    width: 700px;
+    margin: 3px;
+}
+
+.div.field{
+   margin:{
+    bottom: 10px;
+   }
+}
+

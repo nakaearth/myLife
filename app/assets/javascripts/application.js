@@ -6,4 +6,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.mousewheel.min.js
+//= require lds.coulisse.js
+//= require jQuery.ui.coulisseWrapper.js
 //= require_tree .

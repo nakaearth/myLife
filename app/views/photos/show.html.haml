@@ -1,0 +1,16 @@
+%p#notice= notice
+= link_to '編集', edit_photo_path(@photo)
+<br>
+%div.photo_form
+  %p
+    %b タイトル:
+    = @photo.title
+  %p
+    %b 評価値:
+    = @photo.point
+  %p
+    %b 詳細:
+    = @photo.description
+  %p
+    = image_tag @photo.photo.url
+
