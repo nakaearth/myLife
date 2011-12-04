@@ -25,7 +25,7 @@ class PhotosController < ApplicationController
   # GET /photos/new.json
   def new
     @photo = Photo.new
-
+    @albums = Album.where('user_id=?',session[:user_id])
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @photo }
@@ -35,6 +35,7 @@ class PhotosController < ApplicationController
   # GET /photos/1/edit
   def edit
     @photo = Photo.find(params[:id])
+    @albums = Album.where('user_id=?',session[:user_id])
   end
 
   # POST /photos
