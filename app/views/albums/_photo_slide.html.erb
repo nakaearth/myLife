@@ -1,0 +1,22 @@
+ <div id="demo10">
+        <div id="coulisseDemo10" class="CoulisseDemo">
+        </div>
+        <script type="text/javascript">
+            jQuery(function ($) {
+                var myImages = [
+<% @photos.each do |photo| %>
+ '<%=photo.photo.url %>',
+<% end %>
+                    ];
+
+                $('#coulisseDemo10')
+                .coulisse({
+                    images: myImages
+                    , activeSize: 400
+                    , inactiveSize: 200
+                    , activateEvent: 'mouseover'
+                });
+
+            });  //jQuery
+        </script>
+    </div>

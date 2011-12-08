@@ -14,7 +14,7 @@ class AlbumsController < ApplicationController
   # GET /albums/1.json
   def show
     @album = Album.find(params[:id])
-
+    @photos= Photo.where('user_id =?',session[:user_id]).where('album_id=?',params[:id])
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @album }
