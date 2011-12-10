@@ -1,22 +1,44 @@
- <div id="demo10">
-        <div id="coulisseDemo10" class="CoulisseDemo">
-        </div>
-        <script type="text/javascript">
-            jQuery(function ($) {
-                var myImages = [
+<article>
+<div id="demo10">
+  <div id="imageList" class="CoulisseDemo">
+  </div>
+  <div id="slider" class="SliderDemo">
+  <script type="text/javascript">
+          jQuery(function ($) {
+              var myImages = [
 <% @photos.each do |photo| %>
  '<%=photo.photo.url %>',
 <% end %>
+ ''
                     ];
+              var $coulisse = $('#imageList');
+              var $slider = $('#slider');
 
-                $('#coulisseDemo10')
-                .coulisse({
-                    images: myImages
-                    , activeSize: 400
-                    , inactiveSize: 200
-                    , activateEvent: 'mouseover'
-                });
-
+              $coulisse
+              .coulisse({
+                  images: myImages
+                  , duration: 'fast'
+                  , activeSize: 350
+                  , inactiveSize: 250
+                  , area: 0.6
+                  , activateEvent: 'mouseover'
+                  , activateIndex: function (e, myImages) {
+                      $slider.slider('option', 'value', myImages.index);
+                  }
+              });
+              $slider
+                .slider({
+                    value: 0
+                    , min: 0
+                    , max: 0
+                    , step: 1
+                    , slide: function (event, ui) {
+                        $coulisse.coulisse('option', 'index', ui.value);
+                    }
+              });
+             // $coulisse.coulisse('option','images', myImages);
+              $slider.slider('option', 'max', myImages.length - 1);
             });  //jQuery
-        </script>
-    </div>
+  </script>
+</div>
+</article>

@@ -43,7 +43,7 @@ class PhotosController < ApplicationController
   def create
     @photo = Photo.new(params[:photo])
     @photo.user_id=session[:user_id]
-    @photo.album_id= params['album_id']
+    @photo.album_id= params[:photo][:album_id]
     respond_to do |format|
       if @photo.save
         format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
@@ -60,6 +60,7 @@ class PhotosController < ApplicationController
   def update
     @photo = Photo.find(params[:id])
     @photo.user_id=session[:user_id]
+    @photo.album_id= params[:photo][:album_id]
     respond_to do |format|
       if @photo.update_attributes(params[:photo])
         format.html { redirect_to @photo, notice: 'Photo was successfully updated.' }

@@ -14,7 +14,7 @@ class AlbumsController < ApplicationController
   # GET /albums/1.json
   def show
     @album = Album.find(params[:id])
-    @photos= Photo.where('user_id =?',session[:user_id]).where('album_id=?',params[:id])
+    @photos= Photo.where('album_id =?',params[:id])
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @album }
@@ -42,6 +42,7 @@ class AlbumsController < ApplicationController
   def create
     @album = Album.new(params[:album])
     @album.user_id=session[:user_id]
+    
     respond_to do |format|
       if @album.save
         format.html { redirect_to @album, notice: 'Album was successfully created.' }
