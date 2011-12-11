@@ -1,15 +1,13 @@
 <article>
-<div id="demo10">
-  <div id="imageList" class="CoulisseDemo">
-  </div>
-  <div id="slider" class="SliderDemo">
+<div id="images">
+  <div id="imageList" class="Coulisse"></div>
+  <div id="slider" class="Slider"></div>
   <script type="text/javascript">
           jQuery(function ($) {
               var myImages = [
 <% @photos.each do |photo| %>
  '<%=photo.photo.url %>',
 <% end %>
- ''
                     ];
               var $coulisse = $('#imageList');
               var $slider = $('#slider');
