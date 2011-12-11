@@ -1,4 +1,6 @@
 %p#notice= notice
+= link_to '編集', edit_album_path(@album)
+%br
 %div.album_form
   %p
     %b タイトル:
@@ -10,6 +12,5 @@
     %b 説明:
     = @album.description
 
-  = link_to '編集', edit_album_path(@album)
 = render 'photo_slide'
   

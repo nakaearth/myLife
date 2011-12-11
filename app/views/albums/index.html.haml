@@ -7,14 +7,12 @@
     %th.list_menu 公開してる
     %th
     %th
-    %th
 
   - @albums.each do |album|
     %tr
       %td= album.title
       %td= public_value album.public_flag
       %td= link_to '詳細へ', album
-      %td= link_to '編集する', edit_album_path(album)
       %td= link_to '削除する', album, :confirm => '削除してもいい?', :method => :delete
 
 %br

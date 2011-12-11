@@ -1,4 +1,6 @@
 MyLife::Application.routes.draw do
+  get "top/index"
+
   resources :albums
   resources :photos
 

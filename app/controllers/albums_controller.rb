@@ -14,10 +14,17 @@ class AlbumsController < ApplicationController
   # GET /albums/1.json
   def show
     @album = Album.find(params[:id])
-    @photos= Photo.where('album_id =?',params[:id])
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @album }
+    if my_album? @album
+      @photos= Photo.where('album_id =?',params[:id])
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @album }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to albums_url }
+        format.json { head :ok }
+      end
     end
   end
 
@@ -79,6 +86,15 @@ class AlbumsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to albums_url }
       format.json { head :ok }
+    end
+  end
+
+  private
+  def my_album? album
+    if album.user_id != session[:user_id]
+      false
+    else
+      true
     end
   end
 end
