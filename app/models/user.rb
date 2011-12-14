@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
   has_many :albums
-  
   validates :name, :presence=>true
   validates :uid, :presence=>true
   validates :token, :presence=>true

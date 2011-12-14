@@ -1,2 +1,17 @@
-%h1 Top#index
-%p Find me in app/views/top/index.html.haml
+%h1 アルバム一覧
+%br
+= will_paginate @albums, :prev_label=>'«前', :next_label=>'次»'
+%table
+  %tr
+    %th.list_menu タイトル
+    %th.list_menu 公開してる
+    %th
+
+  - @albums.each do |album|
+    %tr
+      %td= album.title
+      %td= public_value album.public_flag
+      %td= link_to '詳細へ', album
+
+%br
+
