@@ -1,6 +1,7 @@
 %h1 アルバム一覧
 %br
-= will_paginate @albums, :prev_label=>'«前', :next_label=>'次»'
+%div.digg_pagination
+  = will_paginate @albums, :container => false
 %table
   %tr
     %th.list_menu タイトル

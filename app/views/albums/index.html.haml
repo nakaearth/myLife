@@ -1,6 +1,8 @@
 
-%h1 アルバム一覧
+%h1 Myアルバム一覧
 
+%div.digg_pagination
+  = will_paginate @albums, :container => false
 %table
   %tr
     %th.list_menu タイトル

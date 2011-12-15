@@ -2,7 +2,7 @@ class AlbumsController < ApplicationController
   # GET /albums
   # GET /albums.json
   def index
-    @albums = Album.where('user_id=?',session[:user_id])
+    @albums = Album.where('user_id=?',session[:user_id]).latest.paginate(:page=>params[:page], :per_page=>5)
 
     respond_to do |format|
       format.html # index.html.erb
