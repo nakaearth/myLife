@@ -1,4 +1,6 @@
 class PhotosController < ApplicationController
+  before_filter :has_albums?
+
   # GET /photos
   # GET /photos.json
   def index
@@ -83,4 +85,9 @@ class PhotosController < ApplicationController
       format.json { head :ok }
     end
   end
+  private  
+  def has_albums?
+    @albums=Album.where('user_id=?',session[:user_id]).count(:id)
+  end
+
 end

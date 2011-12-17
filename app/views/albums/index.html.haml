@@ -2,7 +2,7 @@
 %h1 Myアルバム一覧
 
 %div.digg_pagination
-  = will_paginate @albums, :container => false
+  = will_paginate @albums, :container => false,:previous_label=>'«前', :next_label=>'次»'
 %table
   %tr
     %th.list_menu タイトル

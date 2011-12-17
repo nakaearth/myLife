@@ -137,7 +137,8 @@ ja:
       hour:   "時"
       minute: "分"
       second: "秒"
-
+  Next Label: 次に
+  Previous Label: 前に
   helpers:
     select:
       prompt: "選択してください。"

@@ -1,11 +1,11 @@
 %h1 アルバム一覧
 %br
 %div.digg_pagination
-  = will_paginate @albums, :container => false
+  = will_paginate @albums, :container => false,:previous_label=>'«前', :next_label=>'次»'
 %table
   %tr
     %th.list_menu タイトル
-    %th.list_menu 公開してる
+    %th.list_menu 公開してる?
     %th
 
   - @albums.each do |album|
