@@ -87,7 +87,11 @@ class PhotosController < ApplicationController
   end
   private  
   def has_albums?
-    @albums=Album.where('user_id=?',session[:user_id]).count(:id)
+    if Album.where('user_id=?',session[:user_id]).count(:id) > 0
+      true
+    else 
+      false
+    end
   end
 
 end
