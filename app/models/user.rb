@@ -16,4 +16,12 @@ class User < ActiveRecord::Base
       user.secret=auth['credentials']['secret']
     end
   end
+  def profile_path
+    if image_path.empty?
+      "images/not_image.png"
+    else
+      image_path
+    end
+  end
+
 end
