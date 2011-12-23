@@ -87,10 +87,8 @@ class PhotosController < ApplicationController
   end
   private  
   def has_albums?
-    if Album.where('user_id=?',session[:user_id]).count(:id) > 0
-      true
-    else 
-      false
+    unless Album.where('user_id=?',session[:user_id]).count(:id) > 0
+      redirect_to new_album_url ,notice: 'You must create a album before uploading your images.'
     end
   end
 
