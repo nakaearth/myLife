@@ -1,5 +1,4 @@
 %p#notice= notice
-= link_to '編集', edit_photo_path(@photo)
 <br>
 %div.photo_form
   %p
@@ -12,5 +11,5 @@
     %b 詳細:
     = @photo.description
   %p
-    = image_tag @photo.photo.url
+    = image_tag @photo.photo.url(:medium) 
 

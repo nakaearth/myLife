@@ -1,17 +1,18 @@
 %h1 画像一覧
-
+%div.digg_pagination
+  = will_paginate @photos, :container => false,:previous_label=>'«前', :next_label=>'次»'
 %table
   %tr
-    %th.list_menu タイトル
     %th
+    %th.list_menu タイトル
     %th
     %th
 
   - @photos.each do |photo|
     %tr
-      %td= photo.title
+      %td= image_tag photo.photo.url(:thumb) 
+      %td=  photo.title 
       %td= link_to '詳細', photo
-      %td= link_to '編集する', edit_photo_path(photo)
       %td= link_to '削除する', photo, :confirm => '削除する?', :method => :delete
 
 %br
