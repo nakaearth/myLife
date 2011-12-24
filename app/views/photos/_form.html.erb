@@ -1,9 +1,19 @@
 <div id="photo_form" class="photo_form">
 <%= form_for(@photo, :html => { :multipart => true }) do |f| %>
-  <%= f.label :title %>:<%= f.text_field :title %><br>
-  <%= f.label :description %>:<%= f.text_area :description %><br>
-  画像:<%= f.file_field :photo %><br>
-  アルバム選択：<%=f.select "album_id", options_from_collection_for_select(@albums,"id","title") %>
+  <div class="field>
+    <%= f.label :title %>:<%= f.text_field :title %><br/>
+  </div>
+  <div class="field">
+    <%= f.label :description %>:<%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :tag_list, 'タグ' %><br />
+    <%= f.text_field :tag_list %>
+  </div>
+  <div class="field"> 
+    画像:<%= f.file_field :photo %><br>
+    アルバム選択：<%=f.select "album_id", options_from_collection_for_select(@albums,"id","title") %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

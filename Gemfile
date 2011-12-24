@@ -7,7 +7,6 @@ gem 'rails', '3.1.1'
 
 gem 'sqlite3'
 
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -47,8 +46,4 @@ gem "carrierwave"
 gem "rspec"
 gem "rspec-rails", :group => :development
 gem "paperclip", "~> 2.4"
-
-group :production do
-  gem 'pg'
-  gem 'therubyracer-heroku', '0.8.1.pre3' # you will need this too
-end
+gem 'acts-as-taggable-on', '~>2.2.0'

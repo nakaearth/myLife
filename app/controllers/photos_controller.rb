@@ -5,7 +5,7 @@ class PhotosController < ApplicationController
   # GET /photos.json
   def index
     @photos = Photo.where('user_id=?',session[:user_id]).latest.paginate(:page=>params[:page], :per_page=>10)
-
+    @tags = Photo.tag_counts_on(:tags)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @photos }

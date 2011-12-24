@@ -3,6 +3,8 @@
 class Photo < ActiveRecord::Base
   belongs_to :album
   belongs_to :user
+  acts_as_taggable
+  acts_as_taggable_on :tags
   scope :latest  ,order('updated_at desc')
   validates :title  ,:presence=>true
   validates_attachment_size :photo ,:in =>1..5.megabyte,:message=>'ファイルサイズが大きすぎます' 

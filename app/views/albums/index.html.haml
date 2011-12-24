@@ -1,6 +1,5 @@
 
 %h1 Myアルバム一覧
-
 %div.digg_pagination
   = will_paginate @albums, :container => false,:previous_label=>'«前', :next_label=>'次»'
 %table
@@ -16,6 +15,5 @@
       %td= public_value album.public_flag
       %td= link_to '詳細へ', album
       %td= link_to '削除する', album, :confirm => '削除してもいい?', :method => :delete
-
 %br
 

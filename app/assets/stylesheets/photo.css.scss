@@ -4,39 +4,48 @@
 }
 
 .label {
-	font-size: 10pt;
-	font-weight: bold;
-    background-color: #FFFFDB;
+   font-size: 10pt;
+   font-weight: bold;
+   background-color: #FFFFDB;
 }
 
 
 header{
-    width: 1000px;
-    height: 50px;
+   width: 1000px;
+   height: 50px;
 }
 section {
-    width: 1000px;
-	/*background-color: #61D060;*/
-	visibility: visible;
-	z-index: 0;
-    float: right;
-    margin: 3px;
+   width: 1000px;
+   /*background-color: #61D060;*/
+   visibility: visible;
+   z-index: 0;
+   float: right;
+   margin: 3px;
 }
 root { 
     display: block;
 }
 .photo_form {
-    font-weight: bold;
-    font-size: 12pt;
-    background-color: #FFFFDB;
-    border: 1px solid #333333;
-    width: 70%;
-    margin: 3px;
+   font-weight: bold;
+   font-size: 12pt;
+   background-color: #FFFFDB;
+   border: 1px solid #333333;
+   width: 70%;
+   margin: 3px;
 }
 
 .div.field{
    margin:{
-    bottom: 10px;
+     bottom: 10px;
    }
 }
+.photo_list{
+  background-color: #FFFFDB;
+  float: left;
+}
+
+.css1 { font-size: 1.0em; } 
+.css2 { font-size: 1.2em; } 
+.css3 { font-size: 1.4em; } 
+.css4 { font-size: 1.6em; } 
 
