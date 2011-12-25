@@ -4,8 +4,13 @@ class PhotosController < ApplicationController
   # GET /photos
   # GET /photos.json
   def index
-    @photos = Photo.where('user_id=?',session[:user_id]).latest.paginate(:page=>params[:page], :per_page=>10)
+    if params[:tag] == nil
+      @photos = Photo.where('user_id=?',session[:user_id]).latest.paginate(:page=>params[:page], :per_page=>10)
+    else
+      @photos = Photo.tagged_with(params[:tag]).where('user_id=?',session[:user_id]).latest.paginate(:page=>params[:page],:per_page=>10)
+    end
     @tags = Photo.tag_counts_on(:tags)
+    @tag_name=params[:tag]
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @photos }
