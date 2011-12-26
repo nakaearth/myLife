@@ -34,7 +34,7 @@ root {
    margin: 3px;
 }
 
-.div.field{
+.field{
    margin:{
      bottom: 10px;
    }
@@ -44,9 +44,22 @@ root {
   background-color: #FFFFDB;
   float: left;
 }
+@mixin tagcloud_css($size) {
+  @if $size ==1 {
+    font-size: 20px;
+  }@else if $size == 2 {
+    font-size: 15px;
+  }@else if $size==3 {
+    font-size: 10px; 
+  }@else if $size==4 {
+    font-size: 5px; 
+  }@else {
+    font-size: 20px; 
+  }
+}
 
-.css1 { font-size: 1.0em; } 
-.css2 { font-size: 1.2em; } 
-.css3 { font-size: 1.4em; } 
-.css4 { font-size: 1.6em; } 
+.css1 { @include tagcloud_css(1); }
+.css2 { @include tagcloud_css(2); } 
+.css3 { @include tagcloud_css(3); } 
+.css4 { @include tagcloud_css(4); } 
 
