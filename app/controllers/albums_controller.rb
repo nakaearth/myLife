@@ -27,11 +27,19 @@ class AlbumsController < ApplicationController
     end
   end
 
+  def show_3d
+    @album = Album.find(params[:id])
+    if my_album? @album
+      @photos= Photo.where('album_id =?',params[:id])
+    else
+      redirect_to albums_url 
+    end
+  end
+
   # GET /albums/new
   # GET /albums/new.json
   def new
     @album = Album.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @album }

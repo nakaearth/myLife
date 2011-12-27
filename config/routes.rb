@@ -1,7 +1,9 @@
 MyLife::Application.routes.draw do
   get "top/index"
 
-  resources :albums
+  resources :albums, :only=>[:index,:show,:new,:update,:edit,:create,:destroy] do
+    get :show_3d, :on=>:member
+  end
   resources :photos
 
   match "/auth/:provider/callback"=>"sessions#callback"
