@@ -32,7 +32,7 @@ class PhotosController < ApplicationController
   # GET /photos/new.json
   def new
     @photo = Photo.new
-    @albums = Album.where('user_id=?',session[:user_id])
+    @albums = Album.where('user_id=?',session[:user_id]).latest
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @photo }
