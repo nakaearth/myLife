@@ -47,3 +47,7 @@ gem "rspec"
 gem "rspec-rails", :group => :development
 gem "paperclip", "~> 2.4"
 gem 'acts-as-taggable-on', '~>2.2.0'
+group :production do
+  gem 'pg'
+  gem 'therubyracer-heroku', '0.8.1.pre3' # you will need this too
+end
