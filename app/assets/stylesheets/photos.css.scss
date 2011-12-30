@@ -26,7 +26,10 @@
 .photo_list{
   margin: 4px;
   background-color: #FFFFDB;
-  float: left;
+}
+.tag_cloud{
+  margin: 4px;
+  background-color: #FFF000;
 }
 @mixin tagcloud_css($size) {
   @if $size ==1 {

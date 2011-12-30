@@ -1,5 +1,9 @@
 %h1 画像一覧
-=@tag_name
+%div.tag_cloud
+  =@tag_name
+  -tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag,css_class|
+    =link_to tag.name, {:action=>'index', :tag=>tag.name}, :class=>css_class 
+%br
 %div.photo_list
   %div.digg_pagination
     = will_paginate @photos, :container => false,:previous_label=>'«前', :next_label=>'次»'
@@ -16,7 +20,4 @@
         %td=  photo.title 
         %td= link_to '詳細', photo
         %td= link_to '削除する', photo, :confirm => 'Delete your photo?', :method => :delete
-%div.photo_list
-  -tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag,css_class|
-    =link_to tag.name, {:action=>'index', :tag=>tag.name}, :class=>css_class 
 %br
