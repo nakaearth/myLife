@@ -17,14 +17,11 @@
   </div>
 <% else %>
   <section>
-    <div class="content_div">
-      <div class="login_user_info">
+    <div class="login_user_info">
 &nbsp;&nbsp;<img src="<%=current_user.profile_path %>"><a href="/users/<%=current_user.id %>/edit"><%=current_user.name %>さん</a>、こんばんは！&nbsp;&nbsp;&nbsp;&nbsp;|<a href="/logout">ログアウト</a>
-      </div>
+    </div>
 <%= render 'common/menu' %>
 <%= yield %>
-    </div>
-<!--%= render 'common/my_twitter' % -->
   </section>
 <% end %>
 </body>

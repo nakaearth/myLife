@@ -7,7 +7,10 @@ class TopController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @albums }
     end
-    
+  end
+  
+  def my_twitter
+  
   end
 
 end
