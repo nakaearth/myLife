@@ -9,3 +9,8 @@ http://wine4u.seesaa.net/article/169189619.html
 
 ○HTML5
 http://www.myu-zin.com/webridge/archives/874.html
+
+
+○Twitterウィジェット
+http://code.google.com/p/twitter-friends-widget/wiki/Options
+http://code.google.com/p/twitter-friends-widget/
