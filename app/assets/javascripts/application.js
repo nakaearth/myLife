@@ -5,7 +5,7 @@
 // the compiled file.
 
 //= require jquery_ujs
-//= require jquery.mousewheel.min.js
-//= require lds.coulisse.js
-//= require jQuery.ui.coulisseWrapper.js
+//= require jquery.mousewheel.min
+//= require lds.coulisse
+//= require jQuery.ui.coulisseWrapper
 //= require_tree .
