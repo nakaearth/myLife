@@ -14,3 +14,8 @@ http://www.myu-zin.com/webridge/archives/874.html
 ○Twitterウィジェット
 http://code.google.com/p/twitter-friends-widget/wiki/Options
 http://code.google.com/p/twitter-friends-widget/
+
+○JpMobile
+http://a-newcomer.heroku.com/23
+
+
