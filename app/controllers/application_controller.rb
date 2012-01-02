@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include Jpmobile::ViewSelector
   protect_from_forgery
   helper_method:current_user
 

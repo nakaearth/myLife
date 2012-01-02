@@ -1,5 +1,4 @@
 class TopController < ApplicationController
-  include Jpmobile::ViewSelector
 
   def index
     @albums = Album.latest.is_public.paginate(:page => params[:page], :per_page => 5)

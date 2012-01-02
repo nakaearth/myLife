@@ -2,10 +2,10 @@
 <html>
 <head>
   <title>MyLife</title>
-  <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag    "smart_phone/application" %>
   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/ui-darkness/jquery-ui.css" type="text/css" />
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "smart_phone/application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -17,7 +17,7 @@
 <% else %>
   <section>
     <div class="login_user_info">
-&nbsp;&nbsp;<img src="<%=current_user.profile_path %>"><%=current_user.name %>さん、こんばんは！&nbsp;&nbsp;&nbsp;&nbsp;|<a href="/logout">ログアウト</a>
+&nbsp;&nbsp;<img src="<%=current_user.profile_path %>"><a href="/users/<%=current_user.id %>/edit"><%=current_user.name %>さん</a>、こんばんは！&nbsp;&nbsp;&nbsp;&nbsp;|<a href="/logout">ログアウト</a>
     </div>
 <%= render 'common/menu' %>
 <%= yield %>
