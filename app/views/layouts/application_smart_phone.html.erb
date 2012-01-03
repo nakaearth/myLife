@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<jhtml>
 <head>
   <title>MyLife</title>
   <%= stylesheet_link_tag    "smart_phone/application" %>
@@ -16,11 +16,13 @@
   </div>
 <% else %>
   <section>
-    <div class="login_user_info">
-&nbsp;&nbsp;<img src="<%=current_user.profile_path %>"><a href="/users/<%=current_user.id %>/edit"><%=current_user.name %>さん</a>、こんばんは！&nbsp;&nbsp;&nbsp;&nbsp;|<a href="/logout">ログアウト</a>
+    <div class="smart_login_user_info">
+      <img src="<%=current_user.profile_path %>"><%=current_user.name %>さん
     </div>
-<%= render 'common/menu' %>
+<%= render 'common/smart_phone/menu' %>
 <%= yield %>
+<br>
+      <a href="/logout">ログアウト</a>
   </section>
 <% end %>
 </body>

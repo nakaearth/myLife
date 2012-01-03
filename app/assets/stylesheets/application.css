@@ -28,11 +28,23 @@ footer {
 }
 h1 {
   font-color: #333fff;
+  font-size: 16px;
+  font-weight: bold;
+}
+h2 {
+  font-color: #333fff;
   font-size: 14px;
   font-weight: bold;
 }
 .login_user_info{
   text-align: right;
+  font-weight: bold;
+  font-size: 10pt;
+  color: #3725A8;
+  width: 800px;
+}
+.smart_login_user_info{
+  text-align: left;
   font-weight: bold;
   font-size: 10pt;
   color: #3725A8;
@@ -57,5 +69,11 @@ h1 {
   font-size: 9pt;
   background-color: #FFFFDB;
 }
-
+.error_info{
+  text-align: right;
+  font-weight: bold;
+  font-size: 12pt;
+  color: #3725A8;
+  width: 80%;
+}
 
