@@ -1,18 +1,12 @@
-%h1 アルバム一覧
-%br
-%div.digg_pagination
-  = will_paginate @albums, :container => false,:previous_label=>'«前', :next_label=>'次»'
-%table
-  %tr
-    %th.list_menu タイトル
-    %th.list_menu 公開してる?
-    %th
+<h1>アルバム一覧</h1>
+<br>
+<div class="digg_pagination">
+<%= will_paginate @albums, :container => false,:previous_label=>'«前', :next_label=>'次»' %>
+<%  @albums.each do |album| %>
+  <%= album.title %>
+  <%= public_value album.public_flag %>
+  <%= link_to '詳細へ', album %>
+  <br>
+<% end %>
 
-  - @albums.each do |album|
-    %tr
-      %td= album.title
-      %td= public_value album.public_flag
-      %td= link_to '詳細へ', album
-
-%br
 
