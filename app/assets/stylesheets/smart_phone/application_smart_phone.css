@@ -5,6 +5,7 @@
  *= require_self
  *= require_tree . 
 */
+
 header{
    width: 95%;
    height: 50px;
@@ -57,5 +58,3 @@ h1 {
   font-size: 9pt;
   background-color: #FFFFDB;
 }
-
-
