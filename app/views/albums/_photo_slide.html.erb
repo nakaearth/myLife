@@ -6,17 +6,25 @@
           jQuery(function ($) {
               var myImages = [
 <% @photos.each do |photo| %>
- '<%=photo.photo.url %>',
+ '<%=photo.photo.url %>', 
 <% end %>
                     ];
               var $coulisse = $('#imageList');
               var $slider = $('#slider');
+              var $title=$('#image_title');
+              var $sub_title=$('#sub_image_title');
+
+              var setTitles = function (entryIndex) {
+                    var entry = myImages[entryIndex];
+                    $title.text(entry.title || 'no title');
+                    $subtitle.text(entry.subtitle || 'no description');
+              };
 
               $coulisse
               .coulisse({
                   images: myImages
                   , duration: 'fast'
-                  , activeSize: 350
+                  , activeSize: 500
                   , inactiveSize: 250
                   , area: 0.6
                   , activateEvent: 'mouseover'
