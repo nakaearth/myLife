@@ -3,5 +3,4 @@
 // be included in the compiled file accessible from http://example.com/assets/application.js
 // It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
 // the compiled file.
-//=require jquery.twitter-friends-1.0
-//=require_self
+//=jquery.twitter-friends-1.0
