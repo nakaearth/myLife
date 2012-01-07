@@ -8,6 +8,14 @@ class Photo < ActiveRecord::Base
   scope :latest  ,order('updated_at desc')
   validates :title  ,:presence=>true
   validates_attachment_size :photo ,:in =>1..5.megabyte,:message=>'ファイルサイズが大きすぎます' 
-
-  has_attached_file :photo,:url=>":rails_root/public:url",:url=>"/system/img/attaches/:id/:style/:filename" , :styles => { :medium => "350x350>", :thumb => "100x100>" }
+  if :rails_env == 'production' 
+    has_attached_file :photo,
+      :storage => :s3,
+      :path=>"photos/:id/:style/:filename",
+      :bucket=>'mybucket'
+  else 
+    has_attached_file :photo,
+      :url=>"/system/img/attaches/:id/:style/:filename" ,
+      :styles => { :medium => "350x350>", :thumb => "100x100>" }
+  end
 end
