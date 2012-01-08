@@ -1,5 +1,10 @@
 %p#notice= notice
-= link_to 'アルバムの内容を編集', edit_album_path(@album)
+%div.menu_text
+  = link_to '画像を並べて表示', :action=>'show_album_photo_list' ,:controller=>'albums',:id=>@album.id
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+  = link_to 'アルバムの内容を編集', edit_album_path(@album)
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+%br
 %br
 %div.album_form
   %p

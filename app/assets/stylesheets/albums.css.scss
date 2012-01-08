@@ -39,4 +39,20 @@
     margin: 10px 10%;
     position: relative;
 }
-
+.album_photo_list {
+  width: 100%;
+  background-color: #222222;
+  visibility: visible;
+  position: absolute;
+  z-index: 0;
+}
+.div.photo {
+  background-color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  font-size: 10pt;
+  width: 450px;
+  margin: 3px;
+  z-index: 4;
+  float: left;
+  cursor: move;
+}

@@ -1,0 +1,32 @@
+%p#notice= notice
+%div.menu_text
+  = link_to 'アルバムの内容を編集', edit_album_path(@album)
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+  = link_to 'スライド式アルバムでみる', :action=>'show', :controller=>'albums',:id=>@album.id
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+%br
+%br
+%div.album_form
+  %p
+    %b タイトル:
+    = @album.title
+  %p
+    %b 公開範囲:
+    = public_value @album.public_flag
+  %p
+    %b 説明:
+    = @album.description
+%div.album_photo_list
+  %div.digg_pagination
+    = will_paginate @photos, :container => false,:previous_label=>'«前', :next_label=>'次»'
+  -@photos.each do|photo|
+    %div.div.photo
+      %p
+        = image_tag photo.photo.url(:medium)
+      %p
+        %b タイトル:
+        = photo.title
+      %p
+        %b 投稿日付:
+        = photo.updated_at 
+

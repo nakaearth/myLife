@@ -27,6 +27,23 @@ class AlbumsController < ApplicationController
     end
   end
 
+  # GET /albums/1
+  # GET /albums/1.json
+  def show_album_photo_list
+    @album = Album.find(params[:id])
+    if my_album? @album
+      @photos= Photo.where('album_id =?',params[:id]).paginate(:page=>params[:page],:per_page=>20)
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @album }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to albums_url }
+        format.json { head :ok }
+      end
+    end
+  end
   def show_3d
     @album = Album.find(params[:id])
     if my_album? @album

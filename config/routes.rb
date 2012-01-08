@@ -3,7 +3,7 @@ MyLife::Application.routes.draw do
   get "top/my_twitter"
 
   resources :albums, :only=>[:index,:show,:new,:update,:edit,:create,:destroy] do
-    get :show_3d, :on=>:member
+    get :show_album_photo_list, :on=>:member
   end
   resources :photos
 
