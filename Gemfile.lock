@@ -1,3 +1,13 @@
+GIT
+  remote: git://github.com/thoughtbot/paperclip.git
+  revision: c34a9fb69f9cac531f7865ed0ed6c743c15c9dcc
+  specs:
+    paperclip (2.4.5)
+      activerecord (>= 2.3.0)
+      activesupport (>= 2.3.2)
+      cocaine (>= 0.0.2)
+      mime-types
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -132,11 +142,6 @@ GEM
       oa-more (= 0.3.2)
       oa-oauth (= 0.3.2)
       oa-openid (= 0.3.2)
-    paperclip (2.4.5)
-      activerecord (>= 2.3.0)
-      activesupport (>= 2.3.2)
-      cocaine (>= 0.0.2)
-      mime-types
     pg (0.12.0)
       rake-compiler (~> 0.7)
     polyglot (0.3.3)
@@ -240,7 +245,7 @@ DEPENDENCIES
   json
   newrelic_rpm
   omniauth (= 0.3.2)
-  paperclip (~> 2.4)
+  paperclip!
   pg
   rails (= 3.1.1)
   rspec

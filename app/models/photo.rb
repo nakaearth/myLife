@@ -1,5 +1,4 @@
 #coding: utf-8
-require 'aws/s3'
 
 class Photo < ActiveRecord::Base
   belongs_to :album
