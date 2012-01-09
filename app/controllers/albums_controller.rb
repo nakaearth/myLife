@@ -34,17 +34,17 @@ class AlbumsController < ApplicationController
     @album = Album.find(params[:id])
     if my_album? @album
       @photos= Photo.where('album_id =?',params[:id]).paginate(:page=>params[:page],:per_page=>20)
-      render :stream => true
-#      respond_to do |format|
-#        format.html # show.html.erb
-#        format.json { render json: @album }
-#      end
+#      render :stream => true
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @album }
+      end
     else
-      redirect_to albums_url
-#      respond_to do |format|
-#        format.html { redirect_to albums_url }
-#        format.json { head :ok }
-#      end
+#      redirect_to albums_url
+      respond_to do |format|
+        format.html { redirect_to albums_url }
+        format.json { head :ok }
+      end
     end
   end
   def show_3d
