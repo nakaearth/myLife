@@ -4,6 +4,8 @@
   &nbsp;&nbsp;|&nbsp;&nbsp;
   = link_to 'アルバムの内容を編集', edit_album_path(@album)
   &nbsp;&nbsp;|&nbsp;&nbsp;
+  = link_to 'アルバムを削除', :action=>'destroy_album',:controller=>'albums',:id=>@album.id
+  &nbsp;&nbsp;|&nbsp;&nbsp;
 %br
 %br
 %div.album_form

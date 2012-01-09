@@ -2,9 +2,11 @@ MyLife::Application.routes.draw do
   get "top/index"
   get "top/my_twitter"
 
-  resources :albums, :only=>[:index,:show,:new,:update,:edit,:create,:destroy] do
+  resources :albums, :only=>[:index,:show,:new,:update,:edit,:create] do
     get :show_album_photo_list, :on=>:member
   end
+  match "/albums/:id/destroy_album"=>"albums#destroy_album"
+  
   resources :photos
 
   match "/auth/:provider/callback"=>"sessions#callback"

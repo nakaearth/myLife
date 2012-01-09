@@ -104,7 +104,7 @@ class AlbumsController < ApplicationController
 
   # DELETE /albums/1
   # DELETE /albums/1.json
-  def destroy
+  def destroy_album
     @album = Album.find(params[:id])
     @album.destroy
 
