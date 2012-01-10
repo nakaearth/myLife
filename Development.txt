@@ -18,4 +18,5 @@ http://code.google.com/p/twitter-friends-widget/
 ○JpMobile
 http://a-newcomer.heroku.com/23
 
-
+◯HTTP Streaming
+http://asciicasts.com/episodes/266-http-streaming

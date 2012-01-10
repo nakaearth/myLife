@@ -18,49 +18,54 @@
     margin: 3px;
 }
 .show_album_detail {
-    font-weight: bold;
-    font-size: 12pt;
-    background-color: #FFFFFB;
-    border: 1px solid #333333;
-    width: 100%;
-    margin: 3px;
+   font-weight: bold;
+   font-size: 14pt;
+   background-color: #FFFFFF;
+   border: 1px solid #333333;
+   width: 95%;
+   margin: 10px;
+   -webkit-border-radius: 10px;/* Safari、Google Chrome */
+   -moz-border-radius: 10px;/* Firefox */
 }
 
 .div.field{
    margin:{
-    bottom: 10px;
+     bottom: 10px;
    }
 }
 .Coulisse
 {
-    width: 700px;
-    height: 300px;
-    position: relative;
-    overflow: hidden;
-    background-color: #222222;
-    font-color: #FFFFFF;
+   width: 700px;
+   height: 300px;
+   position: relative;
+   overflow: hidden;
+   background-color: #222222;
+   font-color: #FFFFFF;
 }
 
 .Slider
 {
-    width: 50%;
-    margin: 10px 10%;
-    position: relative;
+   width: 50%;
+   margin: 10px 10%;
+   position: relative;
 }
 .album_photo_list {
-  width: 100%;
-  background-color: #222222;
-  visibility: visible;
-  position: absolute;
-  z-index: 0;
+   width: 98%;
+   background-color: #222222;
+   visibility: visible;
+   position: absolute;
+   z-index: 0;
+   -webkit-border-radius: 5px;/* Safari、Google Chrome */
+   -moz-border-radius: 5px;/* Firefox */
 }
 .div.photo {
-  background-color: #FFFFFF;
-  border: 1px solid #FFFFFF;
-  font-size: 10pt;
-  width: 450px;
-  margin: 3px;
-  z-index: 4;
-  float: left;
-  cursor: move;
+   background-color: #FFFFFF;
+   border: 1px solid #FFFFFF;
+   font-size: 10pt;
+   width: 370px;
+   margin: 5px;
+   z-index: 3;
+   float: left;
+   -webkit-border-radius: 10px;/* Safari、Google Chrome */
+   -moz-border-radius: 10px;/* Firefox */
 }

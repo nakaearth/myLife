@@ -8,17 +8,17 @@
   &nbsp;&nbsp;|&nbsp;&nbsp;
 %br
 %br
-%div.show_album_detail
-  %p
-    %b タイトル:
-    = @album.title
-  %p
-    %b 公開範囲:
-    = public_value @album.public_flag
-  %p
-    %b 説明:
-    = @album.description
 %div.album_photo_list
+  %div.show_album_detail
+    %p
+      %b タイトル:
+      = @album.title
+    %p
+      %b 公開範囲:
+      = public_value @album.public_flag
+    %p
+      %b 説明:
+      = @album.description
   %div.digg_pagination
     = will_paginate @photos, :container => false,:previous_label=>'«前', :next_label=>'次»'
   -@photos.each do|photo|
@@ -30,5 +30,5 @@
         = photo.title
       %p
         %b 投稿日付:
-        = photo.updated_at 
+        = photo.updated_at.strftime("%Y/%m/%d") 
 
