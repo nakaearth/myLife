@@ -24,20 +24,21 @@
   -@photos.each do|photo|
     %div.album_div_photo
       %div{:id=>"photo_viewer_#{photo.id}" ,:class=>"photo_detail"}
-        %span{:id=>"close_photo_#{photo.id}"}
+        %span{:id=>"close_photo_#{photo.id}",:class=>'album_detail_font'}
           閉じる
         %script(type="text/javascript")
           $("#close_photo_#{photo.id}").click(function (){
           $("#photo_viewer_#{photo.id}").fadeOut("slow"); 
           });
+        %br
         = image_tag photo.photo.url(:original)
-        %p
+        %p.album_detail_font
           %b タイトル:
           = photo.title
-        %p
+        %p.album_detail_font
           %b コメント:
           = photo.description
-        %p
+        %p.album_detail_font
           %b 投稿日付:
           = photo.updated_at.strftime("%Y/%m/%d") 
         
