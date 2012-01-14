@@ -6,6 +6,7 @@
   %tr
     %th.list_menu タイトル
     %th
+%br
 
   - @albums.each do |album|
     %tr
@@ -13,6 +14,7 @@
       %td= link_to '詳細へ', album
 
 %br
+%h1 フォロワーの一覧です。
 -unless current_user ==nil
   =render 'common/my_twitter'
 
