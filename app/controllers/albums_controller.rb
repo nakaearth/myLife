@@ -47,14 +47,6 @@ class AlbumsController < ApplicationController
       end
     end
   end
-  def show_3d
-    @album = Album.find(params[:id])
-    if my_album? @album
-      @photos= Photo.where('album_id =?',params[:id])
-    else
-      redirect_to albums_url 
-    end
-  end
 
   # GET /albums/new
   # GET /albums/new.json

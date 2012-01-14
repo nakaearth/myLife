@@ -25,4 +25,9 @@ http://asciicasts.com/episodes/266-http-streaming
 ○Google検索
 http://ajax.appspot.com/gmaps-samples/simplewizard/newsbar.html
 
+○Haml
+http://haml-lang.com/docs/yardoc/file.HAML_REFERENCE.html#css-filter
+
+○JQuery
+http://api.jquery.com/category/effects/
 

@@ -22,8 +22,32 @@
   %div.digg_pagination
     = will_paginate @photos, :container => false,:previous_label=>'«前', :next_label=>'次»'
   -@photos.each do|photo|
-    %div.div.photo
+    %div.album_div_photo
+      %div{:id=>"photo_viewer_#{photo.id}" ,:class=>"photo_detail"}
+        %span{:id=>"close_photo_#{photo.id}"}
+          閉じる
+        %script(type="text/javascript")
+          $("#close_photo_#{photo.id}").click(function (){
+          $("#photo_viewer_#{photo.id}").fadeOut("slow"); 
+          });
+        = image_tag photo.photo.url(:original)
+        %p
+          %b タイトル:
+          = photo.title
+        %p
+          %b コメント:
+          = photo.description
+        %p
+          %b 投稿日付:
+          = photo.updated_at.strftime("%Y/%m/%d") 
+        
       %p
+        %span{:id=>"photo_#{photo.id}"}
+          拡大
+        %script(type="text/javascript")
+          $("#photo_#{photo.id}").click(function (){
+          $("#photo_viewer_#{photo.id}").fadeIn("slow"); 
+          });
         = image_tag photo.photo.url(:medium)
       %p
         %b タイトル:
