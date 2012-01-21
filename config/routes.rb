@@ -4,6 +4,7 @@ MyLife::Application.routes.draw do
 
   resources :albums, :only=>[:index,:show,:new,:update,:edit,:create] do
     get :show_album_photo_list, :on=>:member
+    get :show_public_album_photo_list, :on=>:member
     get :show_photo, :on=>:member
   end
   match "/albums/:id/destroy_album"=>"albums#destroy_album"

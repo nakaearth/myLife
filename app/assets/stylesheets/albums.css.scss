@@ -88,3 +88,12 @@ span {
 .album_detail_font {
   background-color: #FFFFFF;
 }
+.album_viewer_list {
+   width: 98%;
+   background-color: #222222;
+   visibility: visible;
+   position: absolute;
+   z-index: 0;
+   -webkit-border-radius: 5px;/* Safari、Google Chrome */
+   -moz-border-radius: 5px;/* Firefox */
+}

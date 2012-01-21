@@ -33,18 +33,40 @@ class AlbumsController < ApplicationController
   def show_album_photo_list
     @album = Album.find(params[:id])
     if my_album? @album
-      @photos= Photo.where('album_id =?',params[:id]).paginate(:page=>params[:page],:per_page=>20)
+      @photos= Photo.where('album_id =?',params[:id]).paginate(:page=>params[:page],:per_page=>10)
 #      render :stream => true
       respond_to do |format|
         format.html # show.html.erb
         format.json { render json: @album }
       end
     else
-#      redirect_to albums_url
       respond_to do |format|
         format.html { redirect_to albums_url }
         format.json { head :ok }
       end
+    end
+  end
+
+  def show_public_album_photo_list
+    @album = Album.find(params[:id])
+    if @album.public_flag
+      @photos= Photo.where('album_id =?',params[:id]).paginate(:page=>params[:page],:per_page=>8)
+      @history=AlbumShowHistory.new
+      @history.user_id=session[:user_id]
+      @history.album_id=params[:id]
+      @history.user_name=current_user.name
+      @history.save!  
+      @album_viewer_list=AlbumShowHistory.where('user_id != ?',session[:user_id])    
+      respond_to do |format|
+        format.html
+        format.json { render json: @album }
+      end 
+    else
+      respond_to do |format|
+        format.html
+        format.html { redirect_to root_url }
+        format.json { head :ok } 
+      end 
     end
   end
 

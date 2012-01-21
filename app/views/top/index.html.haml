@@ -11,7 +11,7 @@
   - @albums.each do |album|
     %tr
       %td= album.title
-      %td= link_to '詳細へ', album
+      %td= link_to '詳細へ',:action=>'show_public_album_photo_list', :controller=>'albums', :id=>album.id
 
 %br
 %h1 フォロワーの一覧です。
