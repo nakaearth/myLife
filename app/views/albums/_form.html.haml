@@ -13,6 +13,9 @@
       = f.label '公開する:'
       = f.check_box :public_flag
     .field
+      = f.label :album_date
+      = f.date_select :album_date
+    .field
       &nbsp;&nbsp;
       = f.text_area :description
     .actions

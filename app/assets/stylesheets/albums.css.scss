@@ -38,8 +38,7 @@ span {
      bottom: 10px;
    }
 }
-.Coulisse
-{
+.Coulisse{
    width: 700px;
    height: 300px;
    position: relative;
@@ -48,8 +47,7 @@ span {
    font-color: #FFFFFF;
 }
 
-.Slider
-{
+.Slider {
    width: 50%;
    margin: 10px 10%;
    position: relative;
@@ -96,4 +94,24 @@ span {
    z-index: 0;
    -webkit-border-radius: 5px;/* Safari、Google Chrome */
    -moz-border-radius: 5px;/* Firefox */
+}
+.today_album {
+   width: 80%;
+   background-color: #222222;
+   visibility: visible;
+   position: absolute;
+   z-index: 0;
+   -webkit-border-radius: 5px;/* Safari、Google Chrome */
+   -moz-border-radius: 5px;/* Firefox */
+   .past_album {
+     background-color: #FFFFFF;
+     border: 1px solid #FFFFFF;
+     font-size: 10pt;
+     width: 95%;
+     margin: 3px;
+     z-index: 1;
+     float: left;
+     -webkit-border-radius: 10px;/* Safari、Google Chrome */
+     -moz-border-radius: 10px;/* Firefox */
+   }
 }

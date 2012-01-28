@@ -4,6 +4,8 @@ class AlbumsController < ApplicationController
   # GET /albums.json
   def index
     @albums = Album.where('user_id=?',session[:user_id]).latest.paginate(:page=>params[:page], :per_page=>5)
+    @today_albums = Album.where('album_date >= ?',1.years.ago(2.days.ago(Time.now))).where('album_date < ?',1.years.ago(Time.now))
+    p @today_albums.size
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @albums }

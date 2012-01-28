@@ -16,6 +16,10 @@
     %b 公開範囲:
     = public_value @album.public_flag
   %p
+    %b アルバムの日付:
+    =  @album.album_date.strftime("%Y年%m月%d日")
+  %p
+  %p
     %b 説明:
     = @album.description
 
