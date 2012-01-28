@@ -15,7 +15,7 @@
       %td= public_value album.public_flag
       %td= link_to 'アルバムを見る', :action=>'show_album_photo_list' ,:controller=>'albums',:id=>album.id
       %td= link_to '編集する', edit_album_path(album)
--unless @today_albums==nil
+-unless @today_albums==nil || @today_albums.empty?
   %h1 去年の今日は何の日 
   %div.today_album
     %div.past_album
