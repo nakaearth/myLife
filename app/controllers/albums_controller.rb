@@ -51,7 +51,7 @@ class AlbumsController < ApplicationController
 
   def show_public_album_photo_list
     @album = Album.find(params[:id])
-    if @album.public_flag
+    if @album.album_type == 1
       @photos= Photo.where('album_id =?',params[:id]).paginate(:page=>params[:page],:per_page=>8)
       @history=AlbumShowHistory.new
       @history.user_id=session[:user_id]

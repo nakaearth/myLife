@@ -1,11 +1,15 @@
 #coding: utf-8
 
 module AlbumsHelper
-  def public_value flag
+  def album_type_value flag
     if flag==0
-      '非公開'  
+      'プライベートアルバム'  
+    elsif flag == 1
+      '公開アルバム'
+    elsif flag == 2
+      '漫画'
     else
-      '公開'
+      'プライベートアルバム'
     end
   end 
 end

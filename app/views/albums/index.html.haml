@@ -12,7 +12,7 @@
   - @albums.each do |album|
     %tr
       %td= album.title
-      %td= public_value album.public_flag
+      %td= album_type_value album.album_type
       %td= link_to 'アルバムを見る', :action=>'show_album_photo_list' ,:controller=>'albums',:id=>album.id
       %td= link_to '編集する', edit_album_path(album)
 -unless @today_albums==nil || @today_albums.empty?
