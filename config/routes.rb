@@ -1,4 +1,18 @@
 MyLife::Application.routes.draw do
+  get "comic/index"
+
+  get "comic/new"
+
+  get "comic/create"
+
+  get "comic/update"
+
+  get "comic/edit"
+
+  get "comic/show"
+
+  get "comic/destroy"
+
   get "top/index"
   get "top/my_twitter"
 
