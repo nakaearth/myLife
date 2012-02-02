@@ -1,0 +1,61 @@
+.title {
+	font-weight: bold;
+	font-size: 15pt;
+}
+
+.label {
+	font-size: 10pt;
+	font-weight: bold;
+    background-color: #FFFFDB;
+}
+span {
+  color:red;
+  cursor:pointer;
+  font-size: 10pt;
+}
+
+.comic_form {
+    font-weight: bold;
+    font-size: 12pt;
+    background-color: #FFFFDB;
+    border: 1px solid #333333;
+    width: 700px;
+    margin: 3px;
+}
+.show_comic_detail {
+   font-weight: bold;
+   font-size: 14pt;
+   background-color: #FFFFFF;
+   border: 1px solid #333333;
+   width: 95%;
+   margin: 20px;
+   -webkit-border-radius: 10px;/* Safari、Google Chrome */
+   -moz-border-radius: 10px;/* Firefox */
+}
+
+.div.field{
+   margin:{
+     bottom: 10px;
+   }
+}
+.my_photo_list {
+   width: 98%;
+   background-color: #222222;
+   visibility: visible;
+   position: absolute;
+   z-index: 0;
+   -webkit-border-radius: 5px;/* Safari、Google Chrome */
+   -moz-border-radius: 5px;/* Firefox */
+  .div_photo {
+     background-color: #FFFFFF;
+     border: 1px solid #FFFFFF;
+     font-size: 10pt;
+     width: 355px;
+     margin: 3px;
+     z-index: 1;
+     float: left;
+     cursor: move;
+     -webkit-border-radius: 10px;/* Safari、Google Chrome */
+     -moz-border-radius: 10px;/* Firefox */
+  }
+}

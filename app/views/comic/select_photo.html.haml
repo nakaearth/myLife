@@ -1,0 +1,13 @@
+%h1 あなたの漫画を作ってみますか?
+%br
+%div.album_photo_list
+  %div.comic_detail
+    =@comic.title  
+  %div.digg_pagination
+    = will_paginate @photos, :container => false,:previous_label=>'«前', :next_label=>'次»'
+  -@photos.each do|photo|
+    %div.div_photo
+      %p
+        = image_tag photo.photo.url(:medium)
+      %p
+        = photo.description

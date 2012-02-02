@@ -1,0 +1,16 @@
+%div.comic_form#comic_form
+  = form_for @comic,:url=>{:action=>:create,:controller=>:comic} do |f|
+    -if @comic.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@comic.errors.count, "error")} prohibited this comic from being saved:"
+        %ul
+          - @comic.errors.full_messages.each do |msg|
+            %li= msg
+    .field
+      = f.label :title
+      = f.text_field :title
+    .field
+      &nbsp;&nbsp;
+      = f.text_area :description
+    .actions
+      = f.submit '画像を選択しよう'

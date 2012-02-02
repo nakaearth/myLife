@@ -17,7 +17,8 @@ class AlbumsController < ApplicationController
   def show
     @album = Album.find(params[:id])
     if my_album? @album
-      @photos= Photo.where('album_id =?',params[:id])
+    #  @photos= Photo.where('album_id =?',params[:id])
+      @photos= @album.photos
       respond_to do |format|
         format.html # show.html.erb
         format.json { render json: @album }
@@ -35,8 +36,8 @@ class AlbumsController < ApplicationController
   def show_album_photo_list
     @album = Album.find(params[:id])
     if my_album? @album
-      @photos= Photo.where('album_id =?',params[:id]).paginate(:page=>params[:page],:per_page=>10)
-#      render :stream => true
+     ##@photos= Photo.where('album_id =?',params[:id]).paginate(:page=>params[:page],:per_page=>10)
+      @photos= @album.photos.paginate(:page=>params[:page],:per_page=>10)
       respond_to do |format|
         format.html # show.html.erb
         format.json { render json: @album }
@@ -52,7 +53,8 @@ class AlbumsController < ApplicationController
   def show_public_album_photo_list
     @album = Album.find(params[:id])
     if @album.album_type == 1
-      @photos= Photo.where('album_id =?',params[:id]).paginate(:page=>params[:page],:per_page=>8)
+     # @photos= Photo.where('album_id =?',params[:id]).paginate(:page=>params[:page],:per_page=>8)
+      @photos= @album.photos.paginate(:page=>params[:page],:per_page=>8)
       @history=AlbumShowHistory.new
       @history.user_id=session[:user_id]
       @history.album_id=params[:id]

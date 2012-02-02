@@ -1,2 +1,15 @@
-%h1 ComicController#index
-%p Find me in app/views/comic_controller/index.html.haml
+%h1 漫画を作ってみますか？
+%br
+%div.digg_pagination
+  = will_paginate @comics, :container => false,:previous_label=>'«前', :next_label=>'次»'
+%table
+  %tr
+    %th.list_menu タイトル
+    %th.list_menu
+    %th.list_menu
+
+  - @comics.each do |comic|
+    %tr
+      %td= comic.title
+      %td= link_to '漫画を見る', :action=>'show' ,:controller=>'comic',:id=>comic.id
+      %td= link_to '編集する', edit_comic_path(comic)

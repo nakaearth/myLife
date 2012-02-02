@@ -1,17 +1,8 @@
 MyLife::Application.routes.draw do
-  get "comic/index"
 
-  get "comic/new"
-
-  get "comic/create"
-
-  get "comic/update"
-
-  get "comic/edit"
-
-  get "comic/show"
-
-  get "comic/destroy"
+  resources :comic, :only=>[:index,:show, :new,:create,:update,:edit,:destroy] do
+    get :select_photo, :on=>:collection
+  end
 
   get "top/index"
   get "top/my_twitter"

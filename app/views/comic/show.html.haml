@@ -1,2 +1,14 @@
-%h1 ComicController#show
-%p Find me in app/views/comic_controller/show.html.haml
+%h1 あなたが見たい漫画は
+%br
+%div.comic_detail
+  =@comic.title  
+%br
+%div.album_photo_list
+  %div.comic_detail
+    =@comic.title  
+  -@photos.each do|photo|
+    %div.div_photo
+      %p
+        = image_tag photo.photo.url(:medium)
+      %p
+        = photo.message
