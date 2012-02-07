@@ -55,6 +55,7 @@ gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
 gem "aws-sdk"
 
 gem 'acts-as-taggable-on', '~>2.2.0'
+gem 'event-calendar', :require => 'event_calendar'
 
 group :production do
   gem 'pg'

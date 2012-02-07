@@ -31,3 +31,6 @@ http://haml-lang.com/docs/yardoc/file.HAML_REFERENCE.html#css-filter
 ○JQuery
 http://api.jquery.com/category/effects/
 
+◯event_calendar
+https://github.com/elevation/event_calendar
+

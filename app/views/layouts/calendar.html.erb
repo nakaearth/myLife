@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyLife</title>
+  <%= stylesheet_link_tag    "event" %>
+  <%= javascript_include_tag "event_calendar" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<% if current_user==nil %>
+  <div class="login_btn">
+      <%= image_tag "myLife.png" %><br>
+      <%= link_to "Twitterでログイン", "/auth/twitter" %>&nbsp;&nbsp;
+  </div>
+<% else %>
+  <section>
+    <div class="login_user_info">
+&nbsp;&nbsp;<img src="<%=current_user.profile_path %>"><a href="/users/<%=current_user.id %>/edit"><%=current_user.name %>さん</a>、こんばんは！&nbsp;&nbsp;&nbsp;&nbsp;|<a href="/logout">ログアウト</a>
+    </div>
+<%= render 'albums/album_menu' %>
+<%= yield %>
+  </section>
+<% end %>
+</body>
+</html>

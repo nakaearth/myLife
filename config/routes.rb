@@ -1,8 +1,5 @@
 MyLife::Application.routes.draw do
-
-  resources :comic, :only=>[:index,:show, :new,:create,:update,:edit,:destroy] do
-    get :select_photo, :on=>:collection
-  end
+  match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
 
   get "top/index"
   get "top/my_twitter"
