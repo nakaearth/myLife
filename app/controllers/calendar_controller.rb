@@ -8,6 +8,11 @@ class CalendarController < ApplicationController
 
     @event_strips = Event.event_strips_for_month(@shown_month)
     @events = Event.all
+    p @events.size
+  end
+ 
+  def day
+
   end
 
   def new
