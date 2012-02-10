@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120204144407) do
+ActiveRecord::Schema.define(:version => 20120210160912) do
 
   create_table "album_show_histories", :force => true do |t|
     t.integer  "user_id"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20120204144407) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "album_date"
+    t.integer  "event_id"
   end
 
   add_index "albums", ["user_id", "album_date"], :name => "index_albums_on_user_id_and_album_date"
@@ -40,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20120204144407) do
     t.datetime "end_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "photos", :force => true do |t|
