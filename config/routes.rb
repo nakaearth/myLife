@@ -1,7 +1,13 @@
 MyLife::Application.routes.draw do
+#  get "events/show"
+#  get "events/create"
+#  get "events/new"
+#  get "events/edit"
+#  get "events/update"
+
+  resources :events
   match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
   match '/calendar/:year/:month/:day'  => 'calendar#day'
-
   get "top/index"
   get "top/my_twitter"
 

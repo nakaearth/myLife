@@ -1,3 +1,43 @@
 @import "common.css.scss";
 @import "event_calendar.scss.css";
+@import "album.scss.css";
+.event_div {
+   width: 98%;
+   background-color: #222222;
+   visibility: visible;
+   position: absolute;
+   z-index: 0;
+   -webkit-border-radius: 5px;/* Safari、Google Chrome */
+   -moz-border-radius: 5px;/* Firefox */
+}
 
+.event_form {
+   font-weight: bold;
+   font-size: 14pt;
+   background-color: #FFFFFF;
+   border: 1px solid #333333;
+   width: 95%;
+   margin: 20px;
+   -webkit-border-radius: 10px;/* Safari、Google Chrome */
+   -moz-border-radius: 10px;/* Firefox */
+}
+.album_list {
+   width: 98%;
+   background-color: #222222;
+   visibility: visible;
+   position: absolute;
+   z-index: 0;
+   -webkit-border-radius: 5px;/* Safari、Google Chrome */
+   -moz-border-radius: 5px;/* Firefox */
+  .album_div_photo {
+     background-color: #FFFFFF;
+     border: 1px solid #FFFFFF;
+     font-size: 10pt;
+     width: 355px;
+     margin: 3px;
+     z-index: 1;
+     float: left;
+     -webkit-border-radius: 10px;/* Safari、Google Chrome */
+     -moz-border-radius: 10px;/* Firefox */
+  }
+}

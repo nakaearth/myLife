@@ -93,13 +93,6 @@ class AlbumsController < ApplicationController
   def create
     @album = Album.new(params[:album])
     @album.user_id=session[:user_id]
-    @event = Event.new
-    @event.start_at = @album.album_date
-    @event.end_at = @album.album_date
-    @event.name= params[:album][:title]
-    @event.user_id=session[:user_id]
-    @event.save
-    @album.event_id=@event.id 
     respond_to do |format|
       if @album.save
         format.html { redirect_to @album, notice: 'Album was successfully created.' }
@@ -116,14 +109,6 @@ class AlbumsController < ApplicationController
   def update
     @album = Album.find(params[:id])
     @album.user_id=session[:user_id]
-    ##ここはいるかな
-    @event = Event.new
-    @event.start_at = @album.album_date
-    @event.end_at = @album.album_date
-    @event.name= params[:album][:title]
-    @event.user_id=session[:user_id]
-    @event.save
-    
     respond_to do |format|
       @album.event_id=@event.id
       if @album.update_attributes(params[:album])

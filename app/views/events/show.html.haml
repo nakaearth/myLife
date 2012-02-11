@@ -1,0 +1,25 @@
+%div.menu_text
+  = link_to 'イベント内容の修正', edit_event_path(@event)
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+%br
+%br
+%div.event_div
+  %div.event_form
+    %p
+      %b イベント:
+      =@event.name
+%br
+%h2 アルバム一覧
+%br
+%br
+%div.album_list
+  %div.digg_pagination
+    = will_paginate @albums, :container => false,:previous_label=>'«前', :next_label=>'次»'
+  -@albums.each do|album|
+    %div.album_div_photo
+      %p
+        = link_to 'アルバム詳細' ,:controller=>'albums', :action=>'show_album_photo_list'
+      %p
+        %b タイトル:
+        = album.title
+
