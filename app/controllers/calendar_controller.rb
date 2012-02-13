@@ -13,7 +13,7 @@ class CalendarController < ApplicationController
   end
  
   def day
-
+    redirect_to :action=>'new' ,:controller=>'events'
   end
 
   def new

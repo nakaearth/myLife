@@ -195,3 +195,7 @@ ja:
         title: タイトル 
         description: 詳細
         album_date: アルバム日付
+      event:
+        name: イベント名
+        start_at: 開始日
+        end_at: 終了日  

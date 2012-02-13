@@ -1,5 +1,8 @@
+=render 'events/event_menu'
 %div.menu_text
   = link_to 'イベント内容の修正', edit_event_path(@event)
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+  = link_to 'イベントの削除', :action=>'destroy', :controller=>'events',:id=>@event.id
   &nbsp;&nbsp;|&nbsp;&nbsp;
 %br
 %br
