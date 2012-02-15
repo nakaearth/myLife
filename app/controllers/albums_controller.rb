@@ -110,7 +110,6 @@ class AlbumsController < ApplicationController
     @album = Album.find(params[:id])
     @album.user_id=session[:user_id]
     respond_to do |format|
-      @album.event_id=@event.id
       if @album.update_attributes(params[:album])
         format.html { redirect_to @album, notice: 'Album was successfully updated.' }
         format.json { head :ok }

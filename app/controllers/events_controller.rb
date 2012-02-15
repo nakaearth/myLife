@@ -1,7 +1,8 @@
 class EventsController < ApplicationController
   def show
     @event=Event.find(params[:id])
-    @albums= Album.where("event_id=?",@event.id).paginate(:page=>params[:page],:per_page=>10)
+    @albums= Album.where("album_date>=?",@event.start_at).where('album_date < ?',@event.end_at).paginate(:page=>params[:page],:per_page=>10)
+
   end
 
   def create
@@ -32,7 +33,17 @@ class EventsController < ApplicationController
 
   def update
     @event=Event.find(params[:id])
-    
+    @event.user_id=session[:user_id]
+    respond_to do |format|
+      if @events.update_attributes(params[:event])
+        format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        format.html { redirect_to }
+        format.json { head :ok}
+      else
+        format.html { render action=>'edit' }
+        format.json { render json: @event.errors, status: unprocessable_entity}
+      end
+    end  
   end
 
   def destroy
