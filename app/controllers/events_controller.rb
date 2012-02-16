@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   def show
     @event=Event.find(params[:id])
-    @albums= Album.where("album_date>=?",@event.start_at).where('album_date < ?',@event.end_at).paginate(:page=>params[:page],:per_page=>10)
+    @albums= Album.where("album_date>=?",@event.start_at).where('album_date <= ?',@event.end_at).paginate(:page=>params[:page],:per_page=>10)
 
   end
 
