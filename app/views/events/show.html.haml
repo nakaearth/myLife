@@ -21,7 +21,7 @@
   -@albums.each do|album|
     %div.album_div_photo
       %p
-        = link_to 'アルバム詳細' ,:controller=>'albums', :action=>'show_album_photo_list'
+        = link_to 'アルバム詳細' ,:controller=>'albums', :action=>'show_album_photo_list', :id=>album.id
       %p
         %b タイトル:
         = album.title
