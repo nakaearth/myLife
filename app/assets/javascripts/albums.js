@@ -8,3 +8,4 @@
 //= require jquery.mousewheel.min
 //= require lds.coulisse
 //= require jQuery.ui.coulisseWrapper
+//= require turn.js

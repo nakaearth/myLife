@@ -1,0 +1,13 @@
+<div id="photo_books">
+<% @photos.each do |photo| %>
+  <div >
+    <%=image_tag photo.photo.url(:original) %>
+  </div>
+<% end %>
+</div>
+<script type="text/javascript">
+  $('#photo_books').bind('turned', function(e, page) {
+    console.log('Current view: ', $('#photo_books').turn('view'));
+  })
+  $('#photo_books').turn({width: 800, height: 800,page: 1, acceleration: true, shadows: true});
+</script>

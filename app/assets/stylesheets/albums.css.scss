@@ -117,3 +117,12 @@ span {
      -moz-border-radius: 10px;/* Firefox */
    }
 }
+#photo_books {
+  width: 1200px;
+  height: 1200px;
+  .turn-page {
+    width: 1000px;
+    height: 1000px;
+    background-color: #ccc;
+  }
+}

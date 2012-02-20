@@ -1,8 +1,13 @@
+#coding: utf-8
+
 class EventsController < ApplicationController
   def show
-    @event=Event.find(params[:id])
-    @albums= Album.where("album_date>=?",@event.start_at).where('album_date <= ?',@event.end_at).paginate(:page=>params[:page],:per_page=>10)
-
+    unless is_my_event? session[:user_id]
+        redirect_to :action=>'index', :controller=>'calendar' 
+    else
+      @event=Event.find(params[:id])
+      @albums= Album.where("user_id=?",session[:user_id]).where("album_date>=?",@event.start_at).where('album_date <= ?',@event.end_at).paginate(:page=>params[:page],:per_page=>10)
+    end
   end
 
   def create
