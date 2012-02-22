@@ -1,3 +1,5 @@
+#coding: utf-8
+
 class PhotosController < ApplicationController
   before_filter :has_albums?
 
@@ -81,15 +83,12 @@ class PhotosController < ApplicationController
 
   # DELETE /photos/1
   # DELETE /photos/1.json
-  def destroy
+  def destroy_photo
     @photo = Photo.find(params[:id])
     @photo.destroy
-
-    respond_to do |format|
-      format.html { redirect_to photos_url }
-      format.json { head :ok }
-    end
+    redirect_to photos_url ,notice: '写真を削除しました!'
   end
+
   private  
   def has_albums?
     unless Album.where('user_id=?',session[:user_id]).count(:id) > 0

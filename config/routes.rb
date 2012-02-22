@@ -18,7 +18,8 @@ MyLife::Application.routes.draw do
   end
   match "/albums/:id/destroy_album"=>"albums#destroy_album"
   
-  resources :photos
+  resources :photos, :only=>[:index,:show,:new,:create,:edit,:update] do end
+  match "/photos/:id/destroy_photo"=>"photos#destroy_photo"
 
   match "/auth/:provider/callback"=>"sessions#callback"
   match "/logout"=>"sessions#destroy"

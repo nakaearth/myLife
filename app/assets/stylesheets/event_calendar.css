@@ -152,6 +152,7 @@ a.ec-day-link {
   display: block;
   width: 100%;
   height: 100%;
+  color: red;
 }
 
 .ec-no-event-cell {
