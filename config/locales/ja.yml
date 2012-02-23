@@ -197,5 +197,6 @@ ja:
         album_date: アルバム日付
       event:
         name: イベント名
+        event_description: 詳細
         start_at: 開始日
         end_at: 終了日  
