@@ -1,8 +1,9 @@
 --- 
 myLife.png: myLife-2788f300c1db56f14a84aa33a4e34f12.png
 rails.png: rails-e4b51606cd77fda2615e7439907bfc92.png
-albums.js: albums-abc103895dd0eb47e86e993f1d7acc32.js
-albums_smart_phone.js: albums_smart_phone-975e6b1f153742c582a0957cb086e35d.js
+albums.js: albums-2317ed772a3ac6a2a8f949da861df25c.js
+albums_smart_phone.js: albums_smart_phone-7237410df08fe44c5c6e822dc014b5d8.js
 application.js: application-3bf003c960e1e0846f19c9ed4f14a96b.js
-application.css: application-4e07aaa5ee0a0316f1a503a34bbbff7f.css
+application.css: application-1f4df64bfd2c94abdd12a2410efffadb.css
+event.css: event-166a56b8e8212cb58a99e2570fdf4513.css
 smart_phone_application.css: smart_phone_application-b8d2f147cf3dc820aac8eb842c830c7a.css
