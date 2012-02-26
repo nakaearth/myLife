@@ -1,0 +1,25 @@
+%h1 心に残るアルバムを作ってみませんか？
+%br
+%h2 Myアルバム一覧
+%div.digg_pagination
+  = will_paginate @albums, :container => false,:previous_label=>'«前', :next_label=>'次»'
+%table
+  %tr
+    %th.list_menu タイトル
+    %th.list_menu 公開してる
+    %th.list_menu
+    %th.list_menu
+
+  - @albums.each do |album|
+    %tr
+      %td= album.title
+      %td= album_type_value album.album_type
+      %td= link_to 'アルバムを見る', :action=>'show' ,:controller=>'albums',:id=>album.id
+      %td= link_to '編集する', edit_album_path(album)
+-unless @today_albums==nil || @today_albums.empty?
+  %h1 去年の今日は何の日 
+  %div.today_album
+    %div.past_album
+      -@today_albums.each do |today_album|
+        =link_to today_album.title,:action=>'show_album_photo_list',:controller=>'albums',:id=>today_album.id
+

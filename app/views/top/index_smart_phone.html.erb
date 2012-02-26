@@ -4,7 +4,6 @@
 <%= will_paginate @albums, :container => false,:previous_label=>'«前', :next_label=>'次»' %>
 <%  @albums.each do |album| %>
   <%= album.title %>
-  <%= public_value album.public_flag %>
   <%= link_to '詳細へ', album %>
   <br>
 <% end %>

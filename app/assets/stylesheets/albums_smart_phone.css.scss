@@ -1,0 +1,128 @@
+@import "common.css.scss";
+
+.title {
+	font-weight: bold;
+	font-size: 15pt;
+}
+
+.label {
+	font-size: 10pt;
+	font-weight: bold;
+    background-color: #FFFFDB;
+}
+span {
+  color:red;
+  cursor:pointer;
+  font-size: 10pt;
+}
+
+.album_form {
+    font-weight: bold;
+    font-size: 12pt;
+    background-color: #FFFFDB;
+    border: 1px solid #333333;
+    width: 700px;
+    margin: 3px;
+}
+.show_album_detail {
+   font-weight: bold;
+   font-size: 14pt;
+   background-color: #FFFFFF;
+   border: 1px solid #333333;
+   width: 95%;
+   margin: 20px;
+   -webkit-border-radius: 10px;/* Safari、Google Chrome */
+   -moz-border-radius: 10px;/* Firefox */
+}
+
+.div.field{
+   margin:{
+     bottom: 10px;
+   }
+}
+.Coulisse{
+   width: 700px;
+   height: 300px;
+   position: relative;
+   overflow: hidden;
+   background-color: #222222;
+   font-color: #FFFFFF;
+}
+
+.Slider {
+   width: 50%;
+   margin: 10px 10%;
+   position: relative;
+}
+.photo_detail {
+   background-color: #222222;
+   position: absolute;
+   margin: 3px;
+   font-size: 12px;
+   border: 1px solid #FFFFFF;
+   z-index: 2;
+   display: none;
+   -webkit-border-radius: 10px;/* Safari、Google Chrome */
+   -moz-border-radius: 10px;/* Firefox */
+}
+.album_photo_list {
+   width: 98%;
+   background-color: #222222;
+   visibility: visible;
+   position: absolute;
+   z-index: 0;
+   -webkit-border-radius: 5px;/* Safari、Google Chrome */
+   -moz-border-radius: 5px;/* Firefox */
+  .album_div_photo {
+     background-color: #FFFFFF;
+     border: 1px solid #FFFFFF;
+     font-size: 10pt;
+     width: 355px;
+     margin: 3px;
+     z-index: 1;
+     float: left;
+     -webkit-border-radius: 10px;/* Safari、Google Chrome */
+     -moz-border-radius: 10px;/* Firefox */
+  }
+}
+.album_detail_font {
+  background-color: #FFFFFF;
+}
+.album_viewer_list {
+   width: 98%;
+   background-color: #222222;
+   visibility: visible;
+   position: absolute;
+   z-index: 0;
+   -webkit-border-radius: 5px;/* Safari、Google Chrome */
+   -moz-border-radius: 5px;/* Firefox */
+}
+.today_album {
+   width: 80%;
+   background-color: #222222;
+   visibility: visible;
+   position: absolute;
+   z-index: 0;
+   -webkit-border-radius: 5px;/* Safari、Google Chrome */
+   -moz-border-radius: 5px;/* Firefox */
+   .past_album {
+     background-color: #FFFFFF;
+     border: 1px solid #FFFFFF;
+     font-size: 10pt;
+     width: 95%;
+     margin: 3px;
+     z-index: 1;
+     float: left;
+     -webkit-border-radius: 10px;/* Safari、Google Chrome */
+     -moz-border-radius: 10px;/* Firefox */
+   }
+}
+#photo_books {
+  width: 1200px;
+  height: 1200px;
+  .turn-page {
+    width: 1000px;
+    height: 1000px;
+    background-color: #ccc;
+  }
+}
