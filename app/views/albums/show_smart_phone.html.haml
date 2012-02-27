@@ -1,11 +1,11 @@
 %p#notice= notice
 %div.menu_text
   = link_to '画像を並べて表示', :action=>'show_album_photo_list' ,:controller=>'albums',:id=>@album.id
-  &nbsp;&nbsp;|&nbsp;&nbsp;
+  %br
   = link_to 'アルバムの内容を編集', edit_album_path(@album)
-  &nbsp;&nbsp;|&nbsp;&nbsp;
+  %br
   = link_to 'アルバムを削除', :action=>'destroy_album',:controller=>'albums',:id=>@album.id
-  &nbsp;&nbsp;|&nbsp;&nbsp;
+  %br
 %br
 %br
 %div.show_album_detail
