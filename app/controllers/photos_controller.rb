@@ -86,6 +86,7 @@ class PhotosController < ApplicationController
   def destroy_photo
     @photo = Photo.find(params[:id])
     @photo.destroy
+#    @photo.delete_photo
     redirect_to photos_url ,notice: '写真を削除しました!'
   end
 

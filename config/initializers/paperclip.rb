@@ -5,6 +5,7 @@ module Paperclip
     def transformation_command
       p 'File Format'
       p @current_format.upcase
+      p @file.size
 
       scale, crop = @current_geometry.transformation_to(@target_geometry, crop?)
       trans = []
