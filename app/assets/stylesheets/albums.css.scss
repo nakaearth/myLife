@@ -6,23 +6,26 @@
 }
 
 .label {
-	font-size: 10pt;
-	font-weight: bold;
-    background-color: #FFFFDB;
+  font-size: 10pt;
+  font-weight: bold;
+  background-color: #FFFFDB;
 }
 span {
   color:red;
   cursor:pointer;
   font-size: 10pt;
 }
+.div_album_list {
+  margin: 10px;
+}
 
 .album_form {
-    font-weight: bold;
-    font-size: 12pt;
-    background-color: #FFFFDB;
-    border: 1px solid #333333;
-    width: 700px;
-    margin: 3px;
+  font-weight: bold;
+  font-size: 12pt;
+  background-color: #FFFFDB;
+  border: 1px solid #333333;
+  width: 700px;
+  margin: 3px;
 }
 .show_album_detail {
    font-weight: bold;
@@ -118,11 +121,13 @@ span {
    }
 }
 #photo_books {
-  width: 1200px;
-  height: 1200px;
+  width: 800px;
+  height:700px;
+  position: relative;
+  float: left;
   .turn-page {
-    width: 1000px;
-    height: 1000px;
+    width: 800px;
+    height: 700px;
     background-color: #ccc;
   }
 }

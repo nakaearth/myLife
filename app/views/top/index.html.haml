@@ -1,19 +1,20 @@
 %h1 記念に残るアルバムを作ってみませんか？
 %br
 %h2 一般公開されているアルバムです。
-%div.digg_pagination
-  = will_paginate @albums, :container => false,:previous_label=>'«前', :next_label=>'次»'
-%table
-  %tr
-    %th.list_menu タイトル
-    %th
-  - @albums.each do |album|
+%div.div_album_list
+  %div.digg_pagination
+    = will_paginate @albums, :container => false,:previous_label=>'«前', :next_label=>'次»'
+  %table
     %tr
-      %td= album.title
-      %td= link_to '詳細へ',:action=>'show_public_album_photo_list', :controller=>'albums', :id=>album.id
+      %th.list_menu タイトル
+      %th
+    - @albums.each do |album|
+      %tr
+        %td= album.title
+        %td= link_to '詳細へ',:action=>'show_public_album_photo_list', :controller=>'albums', :id=>album.id
 
-%br
-%h1 フォロワーの一覧です。
--unless current_user ==nil
-  =render 'common/my_twitter'
+  %br
+  %h1 フォロワーの一覧です。
+  -unless current_user ==nil
+    =render 'common/my_twitter'
 

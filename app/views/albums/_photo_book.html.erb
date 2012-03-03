@@ -1,6 +1,6 @@
 <div id="photo_books">
 <% @photos.each do |photo| %>
-   <div style="background-image:url(<%= photo.photo.url(:original)%>);"></div>
+   <div style="background-image:url(<%= photo.photo.url(:original)%>); background-repeat:no-repeat;"></div>
 <% end %>
 </div>
 <script type="text/javascript">
