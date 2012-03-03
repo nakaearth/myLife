@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(:version => 20120223150638) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.integer  "album_id"
+    t.string   "message"
   end
 
   add_index "photos", ["user_id"], :name => "index_photos_on_user_id"
