@@ -1,0 +1,57 @@
+%p#notice= notice
+%div.menu_text
+  = link_to 'アルバムをみる', :action=>'show', :controller=>'albums',:id=>@album.id
+  %br
+  = link_to 'アルバムの内容を編集', edit_album_path(@album)
+  %br
+  = link_to 'アルバムを削除', :action=>'destroy_album', :controller=>'albums',:id=>@album.id
+  %br
+%br
+%div.album_photo_list
+  %div.show_album_detail
+    %p
+      %b タイトル:
+      = @album.title
+    %p
+      %b アルバムの種類:
+      = album_type_value @album.album_type
+    %p
+      %b 説明:
+      = @album.description
+  %div.digg_pagination
+    = will_paginate @photos, :container => false,:previous_label=>'«前', :next_label=>'次»'
+  -@photos.each do|photo|
+    %div.album_div_photo
+      %div{:id=>"photo_viewer_#{photo.id}" ,:class=>"photo_detail"}
+        %span{:id=>"close_photo_#{photo.id}",:class=>'album_detail_font'}
+          閉じる
+        %script(type="text/javascript")
+          $("#close_photo_#{photo.id}").click(function (){
+          $("#photo_viewer_#{photo.id}").fadeOut("slow"); 
+          });
+        %br
+        = image_tag photo.photo.url(:original)
+        %p.album_detail_font
+          %b タイトル:
+          = photo.title
+        %p.album_detail_font
+          %b コメント:
+          = photo.description
+        %p.album_detail_font
+          %b 投稿日付:
+          = photo.updated_at.strftime("%Y/%m/%d") 
+      %p
+        %span{:id=>"photo_#{photo.id}"}
+          拡大
+        %script(type="text/javascript")
+          $("#photo_#{photo.id}").click(function (){
+          $("#photo_viewer_#{photo.id}").fadeIn("slow"); 
+          });
+        = image_tag photo.photo.url(:medium)
+      %p
+        %b タイトル:
+        = photo.title
+      %p
+        %b 投稿日付:
+        = photo.updated_at.strftime("%Y/%m/%d") 
+

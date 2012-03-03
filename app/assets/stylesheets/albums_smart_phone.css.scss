@@ -6,27 +6,27 @@
 }
 
 .label {
-	font-size: 10pt;
+	font-size: 8pt;
 	font-weight: bold;
     background-color: #FFFFDB;
 }
 span {
   color:red;
   cursor:pointer;
-  font-size: 10pt;
+  font-size: 8pt;
 }
 
 .album_form {
     font-weight: bold;
-    font-size: 12pt;
+    font-size: 9pt;
     background-color: #FFFFDB;
     border: 1px solid #333333;
-    width: 700px;
+    width: 300px;
     margin: 3px;
 }
 .show_album_detail {
    font-weight: bold;
-   font-size: 14pt;
+   font-size: 10pt;
    background-color: #FFFFFF;
    border: 1px solid #333333;
    width: 95%;
@@ -39,20 +39,6 @@ span {
    margin:{
      bottom: 10px;
    }
-}
-.Coulisse{
-   width: 700px;
-   height: 300px;
-   position: relative;
-   overflow: hidden;
-   background-color: #222222;
-   font-color: #FFFFFF;
-}
-
-.Slider {
-   width: 50%;
-   margin: 10px 10%;
-   position: relative;
 }
 .photo_detail {
    background-color: #222222;
@@ -76,8 +62,8 @@ span {
   .album_div_photo {
      background-color: #FFFFFF;
      border: 1px solid #FFFFFF;
-     font-size: 10pt;
-     width: 355px;
+     font-size: 8pt;
+     width: 350px;
      margin: 3px;
      z-index: 1;
      float: left;
