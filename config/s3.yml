@@ -1,4 +1,4 @@
 production:
-  access_key_id: ENV['S3_ACCESS_KEY']
-  secret_access_key: ENV['S3_SECRET_KEY']
+  access_key_id: AKIAI6ZEI42Z7COGZBUA
+  secret_access_key: 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
   bucket: mylife-bucket
