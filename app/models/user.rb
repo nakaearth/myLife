@@ -13,7 +13,6 @@ class User < ActiveRecord::Base
     user.uid=auth["uid"]
     unless auth["info"].blank?
       user.name=auth["info"]["name"]
-      user.screen_name=auth["info"]["nickname"]
       user.image_path=auth["info"]["image"] 
     end
     unless auth["credentials"].blank?
