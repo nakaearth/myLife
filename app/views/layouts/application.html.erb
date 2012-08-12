@@ -12,7 +12,7 @@
 <% if current_user==nil %>
   <div class="login_btn">
       <%= image_tag "myLife.png" %><br>
-      <%= link_to "Twitterでログイン", "/auth/twitter" %>&nbsp;&nbsp;
+      <%= link_to "Twitterでログイン", "/auth/#{if Rails.env.production? then 'twitter' else 'developer' end}" %>&nbsp;&nbsp;
   </div>
 <% else %>
   <section>
