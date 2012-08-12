@@ -8,10 +8,13 @@ class Photo < ActiveRecord::Base
   scope :latest  ,order('updated_at desc')
   validates :title  ,:presence=>true
   validates_attachment_size :photo ,:in =>1..5.megabyte,:message=>'ファイルサイズが大きすぎます' 
+
+  S3_CREDENTIALS={:access_key_id=> ENV['S3_ACCESS_KEY_ID'], :secret_access_key=>ENV['S3_SECRET_KEY'], :bucket=>"mylife-bucket"}
+
   if Rails.env.production? 
     has_attached_file :photo,
       :storage => :s3,
-      :s3_credentials=>"#{Rails.root}/config/s3.yml",
+      :s3_credentials=>S3_CREDENTIALS,
       :styles => { :medium => "350x350>", :thumb => "100x100>",:original=>"700x700>"},
       :url => ":s3_domain_url",
       :path=>"photos/:id/:style/:filename"
