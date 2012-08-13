@@ -24,6 +24,7 @@ class User < ActiveRecord::Base
       user.token=auth.credentials.token
     end
     user.save
+  p user
     user
   end
 
