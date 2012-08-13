@@ -39,7 +39,6 @@ group :test do
   gem 'turn', :require => false
 end
 gem "omniauth-twitter"
-gem "omniauth-facebook"
 gem "haml-rails"
 gem "json"
 gem "will_paginate"
